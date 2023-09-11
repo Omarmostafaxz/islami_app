@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false ,
       initialRoute: HomeScreen.routeName ,
       routes:{
+
         HomeScreen.routeName:(context) => HomeScreen(),
         SuraDetails.routeName:(context) => SuraDetails(),
       },
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme,
 
 
+
     );
+
   }
 }
