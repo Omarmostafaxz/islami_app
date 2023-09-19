@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamiapp/hadeth_details.dart';
 import 'package:islamiapp/hadeth_model.dart';
 
 class AhadethTab extends StatefulWidget {
@@ -9,9 +10,9 @@ class AhadethTab extends StatefulWidget {
 
 class _AhadethTabState extends State<AhadethTab> {
   List<ahadethModel> allahadeth = [];
-
   @override
   Widget build(BuildContext context) {
+    loadhadeth();
     return Column(
       children: [
         Padding(
@@ -19,7 +20,7 @@ class _AhadethTabState extends State<AhadethTab> {
           child: Image.asset("assets/images/ahadeth_image.png"),
         ),
         Divider(
-          thickness: 3,
+          thickness: 4,
           color: Color(0xffB7935F),
         ),
         Text(
@@ -27,17 +28,20 @@ class _AhadethTabState extends State<AhadethTab> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         Divider(
-          thickness: 3,
+          thickness: 4,
           color: Color(0xffB7935F),
         ),
+        SizedBox(
+          height: 15,
+        ),
         Expanded(
-          child: ListView.separated(separatorBuilder: (context, index) => Divider(
-            thickness: 3,
-            indent: 40,
-            endIndent: 40,
-          ),
+          child: ListView.separated(separatorBuilder: (context, index) => Divider(color: Color(0xffB7935F),thickness: 2,indent: 40,endIndent: 40,height:15),
               itemBuilder: (context, index) {
-                return Text(allahadeth[index].title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),);
+                return Center(child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, HadethDetails.routeName,arguments: allahadeth[index]);
+                    },
+                    child: Text(allahadeth[index].title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))));
               },
               itemCount: allahadeth.length,)
         )],
@@ -55,6 +59,7 @@ class _AhadethTabState extends State<AhadethTab> {
         ahadethModel hadethModel = ahadethModel(title, content);
         allahadeth.add(hadethModel);
       }
+      setState(() {});
     });
   }
 }
