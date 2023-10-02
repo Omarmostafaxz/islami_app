@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamiapp/my_theme.dart';
 import 'package:islamiapp/page%20one%20quran/sura%20details.dart';
 import 'package:islamiapp/page%20one%20quran/sura%20model.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
 
@@ -131,13 +131,13 @@ class QuranTab extends StatelessWidget {
         children: [
           Image.asset("assets/images/quran_imaged.png"),
           Divider(
-            color: MyTheme.PrimaryColor,
+            color: Colors.black,
             thickness: 2,
           ),
-          Text("soura name",
+          Text(AppLocalizations.of(context)!.suraNames,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
           Divider(
-            color: MyTheme.PrimaryColor,
+            color: Colors.black,
             thickness: 2,
           ),
           Expanded(
