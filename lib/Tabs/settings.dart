@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/bottom%20sheet/theming_bottom_sheet.dart';
 import 'package:islamiapp/my_theme.dart';
+
+import '../bottom sheet/langyage_bottom_sheet.dart';
 
 class SettingsTab extends StatefulWidget {
   @override
@@ -10,7 +13,7 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.only(top: 120,left: 30,right: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,8 +30,8 @@ class _SettingsTabState extends State<SettingsTab> {
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: MyTheme.PrimaryColor)),
-              child: Text("English"),
+                  border: Border.all(color: Colors.black)),
+              child: Text("English",),
             ),
           ),
           SizedBox(
@@ -47,7 +50,7 @@ class _SettingsTabState extends State<SettingsTab> {
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  border: Border.all(color: MyTheme.PrimaryColor)),
+                  border: Border.all(color:Colors.black)),
               child: Text("light"),
             ),
           ),
@@ -59,27 +62,20 @@ class _SettingsTabState extends State<SettingsTab> {
   showLanguageBottomSheet() {
     showModalBottomSheet(
       context: context,
-      isScrollControlled: true,
       shape: OutlineInputBorder(
         borderSide: BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
-      builder: (context) => Container(
-        height: MediaQuery.of(context).size.height*0.7,
-      ),
-    );
+      builder: (context) =>  LanguageBottomSheet());
   }
   showThemeingBottomSheet() {
     showModalBottomSheet(
       context: context,
-      isScrollControlled: true,
       shape: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
-      builder: (context) => Container(
-        height: MediaQuery.of(context).size.height*0.7,
-      ),
+      builder: (context) => themingBottomSheet(),
     );
   }
 }

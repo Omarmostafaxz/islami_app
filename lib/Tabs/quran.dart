@@ -131,13 +131,13 @@ class QuranTab extends StatelessWidget {
         children: [
           Image.asset("assets/images/quran_imaged.png"),
           Divider(
-            color: MyTheme.PrimaryColor,
+            color: Colors.black,
             thickness: 2,
           ),
           Text(AppLocalizations.of(context)!.suraNames,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
           Divider(
-            color: MyTheme.PrimaryColor,
+            color: Colors.black,
             thickness: 2,
           ),
           Expanded(

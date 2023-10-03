@@ -40,15 +40,15 @@ List<String>verses=[];
             elevation: 12,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18),
-              side: BorderSide(color: MyTheme.PrimaryColor)
+              side: BorderSide(color: MyThemeData.yellowColor)
             ),
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: ListView.separated(
-                  separatorBuilder: (context, index) => Divider(indent: 40,endIndent: 40,color: MyTheme.PrimaryColor,thickness: 2,),
+                  separatorBuilder: (context, index) => Divider(indent: 40,endIndent: 40,color: Colors.black54,thickness: 2,),
                   itemBuilder: (context, index) {
                 return Center(
-                  child: Text(verses[index],textAlign: TextAlign.center,style: TextStyle(color: Colors.black87,
+                  child: Text(verses[index],textAlign: TextAlign.center,style: TextStyle(color: Colors.black,
                       fontSize: 22,
                       fontWeight: FontWeight.bold),),
                 );

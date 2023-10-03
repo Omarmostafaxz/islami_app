@@ -5,8 +5,17 @@ import 'package:islamiapp/hadeth_details.dart';
 import 'package:islamiapp/my_theme.dart';
 import 'package:islamiapp/page%20one%20quran/sura%20details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamiapp/providers/my%20provider.dart';
+import 'package:islamiapp/providers/sura%20details%20provider.dart';
+import 'package:provider/provider.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyProvider(),
+      child: MultiProvider(providers: [
+        ChangeNotifierProvider(create: (context) => MyProvider(),),
+        ChangeNotifierProvider(create: (context) => SuraDetailsProvider(),)
+      ],
+      child: MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,10 +24,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
     return  MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(provider.LanguageCode),
       debugShowCheckedModeBanner: false ,
       initialRoute: HomeScreen.routeName ,
       routes:{
@@ -26,9 +37,9 @@ class MyApp extends StatelessWidget {
         SuraDetails.routeName:(context) => SuraDetails(),
         HadethDetails.routeName:(context) => HadethDetails(),
       },
-      theme: MyTheme.lightTheme,
-      darkTheme: MyTheme.darkTheme,
-
+      themeMode:provider.modeApp,
+      theme:  MyThemeData.lightTheme,
+      darkTheme:  MyThemeData.darkTheme,
 
 
     );
