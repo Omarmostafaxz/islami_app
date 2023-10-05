@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class MyThemeData {
   static const Color lightColor = Color(0xFFB7935F);
   static const Color darkColor = Color(0xFF141A2E);
@@ -20,7 +19,7 @@ class MyThemeData {
           onBackground: lightColor,
           surface: Colors.grey.shade300,
           onSurface: Colors.black54),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
           bodyLarge: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -29,22 +28,24 @@ class MyThemeData {
               fontSize: 25,
               fontWeight: FontWeight.w600,
               color: Color(0xFF242424)),
-          titleSmall:TextStyle(
+          titleSmall: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
               color: Color(0xFF242424)),
-          bodySmall:TextStyle(
+          bodySmall: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w300,
               color: Color(0xFF242424))),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xFFB7935F),
           type: BottomNavigationBarType.shifting,
           unselectedItemColor: Colors.white,
           selectedItemColor: Color(0xFFB7935F),
           selectedLabelStyle: TextStyle(fontSize: 12),
-          unselectedLabelStyle: TextStyle(fontSize: 12,)),
-      appBarTheme: AppBarTheme(
+          unselectedLabelStyle: TextStyle(
+            fontSize: 12,
+          )),
+      appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           iconTheme: IconThemeData(color: Color(0xFFB7935F), size: 30),
           elevation: 0.0,
@@ -65,8 +66,8 @@ class MyThemeData {
           onBackground: darkColor,
           surface: Colors.grey.shade300,
           onSurface: Colors.white),
-      textTheme: TextTheme(
-          bodyLarge:TextStyle(
+      textTheme: const TextTheme(
+          bodyLarge: TextStyle(
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
           bodyMedium: TextStyle(
               fontSize: 25, fontWeight: FontWeight.w600, color: Colors.white),
@@ -74,14 +75,16 @@ class MyThemeData {
               fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
           bodySmall: TextStyle(
               fontSize: 20, fontWeight: FontWeight.w300, color: yellowColor)),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: darkColor,
           type: BottomNavigationBarType.shifting,
           unselectedItemColor: Colors.white,
           selectedItemColor: yellowColor,
           selectedLabelStyle: TextStyle(fontSize: 12),
-          unselectedLabelStyle:TextStyle(fontSize: 12,)),
-      appBarTheme: AppBarTheme(
+          unselectedLabelStyle: TextStyle(
+            fontSize: 12,
+          )),
+      appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           iconTheme: IconThemeData(color: Colors.white, size: 30),
           elevation: 0.0,

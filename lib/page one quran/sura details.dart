@@ -21,7 +21,7 @@ List<String>verses=[];
       loadFiles(args.index);
     }
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/background.png"),
             fit: BoxFit.fill,
@@ -29,7 +29,7 @@ List<String>verses=[];
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.name,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black87,
                   fontSize: 30,
                   fontWeight: FontWeight.bold)),
@@ -40,15 +40,15 @@ List<String>verses=[];
             elevation: 12,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18),
-              side: BorderSide(color: MyThemeData.yellowColor)
+              side: const BorderSide(color: MyThemeData.yellowColor)
             ),
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: ListView.separated(
-                  separatorBuilder: (context, index) => Divider(indent: 40,endIndent: 40,color: Colors.black54,thickness: 2,),
+                  separatorBuilder: (context, index) => const Divider(indent: 40,endIndent: 40,color: Colors.black54,thickness: 2,),
                   itemBuilder: (context, index) {
                 return Center(
-                  child: Text(verses[index],textAlign: TextAlign.center,style: TextStyle(color: Colors.black,
+                  child: Text(verses[index],textAlign: TextAlign.center,style: const TextStyle(color: Colors.black,
                       fontSize: 22,
                       fontWeight: FontWeight.bold),),
                 );
@@ -65,7 +65,6 @@ List<String>verses=[];
     String Files =
     await rootBundle.loadString("assets/Files/${index + 1}.txt");
     List<String>lines=Files.split("\n");
-    print(lines);
     verses=lines;
     setState((){});
   }

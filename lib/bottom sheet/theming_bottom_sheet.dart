@@ -5,11 +5,13 @@ import 'package:provider/provider.dart';
 import '../providers/my provider.dart';
 
 class themingBottomSheet extends StatelessWidget {
+  const themingBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     var provider=Provider.of<MyProvider>(context);
     return  Padding(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           InkWell(
@@ -18,13 +20,13 @@ class themingBottomSheet extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text("Dark",style: TextStyle(color: Colors.black38),),
-                Spacer(),
-                provider.modeApp==ThemeMode.dark? Icon(Icons.done,color: MyThemeData.lightColor,):SizedBox.shrink(),
+                const Text("Dark",style: TextStyle(color: Colors.black38),),
+                const Spacer(),
+                provider.modeApp==ThemeMode.dark? const Icon(Icons.done,color: MyThemeData.lightColor,):const SizedBox.shrink(),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           InkWell(
@@ -33,9 +35,9 @@ class themingBottomSheet extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text("Light",),
-                Spacer(),
-                provider.modeApp==ThemeMode.dark?SizedBox.shrink():Icon(Icons.done,),
+                const Text("Light",),
+                const Spacer(),
+                provider.modeApp==ThemeMode.dark?const SizedBox.shrink():const Icon(Icons.done,),
               ],
             ),
           )

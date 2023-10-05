@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/bottom%20sheet/theming_bottom_sheet.dart';
-import 'package:islamiapp/my_theme.dart';
 
 import '../bottom sheet/langyage_bottom_sheet.dart';
 
 class SettingsTab extends StatefulWidget {
+  const SettingsTab({super.key});
+
   @override
   State<SettingsTab> createState() => _SettingsTabState();
 }
@@ -17,41 +18,41 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("language"),
+          const Text("language"),
           InkWell(
             onTap: () {
               showLanguageBottomSheet();
             },
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 18),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(horizontal: 18),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 18,
               ),
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(color: Colors.black)),
-              child: Text("English",),
+              child: const Text("English",),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text("Themeing"),
+          const Text("Themeing"),
           InkWell(
             onTap:(){
               showThemeingBottomSheet();
               },
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 18),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(horizontal: 18),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 18,
               ),
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(color:Colors.black)),
-              child: Text("light"),
+              child: const Text("light"),
             ),
           ),
         ],
@@ -62,7 +63,7 @@ class _SettingsTabState extends State<SettingsTab> {
   showLanguageBottomSheet() {
     showModalBottomSheet(
       context: context,
-      shape: OutlineInputBorder(
+      shape: const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
@@ -71,7 +72,7 @@ class _SettingsTabState extends State<SettingsTab> {
   showThemeingBottomSheet() {
     showModalBottomSheet(
       context: context,
-      shape: OutlineInputBorder(
+      shape: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.transparent),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),

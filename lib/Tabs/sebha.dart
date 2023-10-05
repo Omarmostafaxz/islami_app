@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SebhaTab extends StatefulWidget {
+  const SebhaTab({super.key});
+
 
   @override
   State<SebhaTab> createState() => _SebhaTabState();
@@ -38,23 +39,23 @@ class _SebhaTabState extends State<SebhaTab> {
             padding: const EdgeInsets.only(top: 60),
             child: Image.asset("assets/images/sebha_img.png",height:220,),
           )),
-      Padding(
-        padding: const EdgeInsets.only(top: 60),
+      const Padding(
+        padding: EdgeInsets.only(top: 60),
         child: Text("عدد التسبيحات",style: TextStyle(fontSize: 25,fontWeight:FontWeight.bold),),
       ),
       Padding(
         padding: const EdgeInsets.only(top: 30),
         child: Container(
             decoration: BoxDecoration(
-                color: Color(0xffB7935F),
+                color: const Color(0xffB7935F),
                 borderRadius: BorderRadius.circular(15)),
             width: 60,
             height: 60,
-            child: Center(child: Text('$counter',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),))),
+            child: Center(child: Text('$counter',style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),))),
       ),
       Padding(
         padding: const EdgeInsets.only(top: 40),
-        child: ElevatedButton(onPressed: (){incrementCounter();}, child:Text(name,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),style: ElevatedButton.styleFrom(fixedSize: Size(160, 50),elevation:5,backgroundColor: Color(0xffB7935F),shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(15))),),
+        child: ElevatedButton(onPressed: (){incrementCounter();},style: ElevatedButton.styleFrom(fixedSize: const Size(160, 50),elevation:5,backgroundColor: const Color(0xffB7935F),shape:RoundedRectangleBorder(borderRadius:BorderRadius.circular(15))), child:Text(name,style: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
       )
     ],
   ),

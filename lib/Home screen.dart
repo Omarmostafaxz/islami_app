@@ -4,12 +4,13 @@ import 'package:islamiapp/Tabs/quran.dart';
 import 'package:islamiapp/Tabs/radio.dart';
 import 'package:islamiapp/Tabs/sebha.dart';
 import 'package:islamiapp/Tabs/settings.dart';
-import 'package:islamiapp/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamiapp/providers/my%20provider.dart';
 import 'package:provider/provider.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
+
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -38,11 +39,11 @@ int index=0;
             setState(() {});
           },
           type: BottomNavigationBarType.shifting,
-          items: [
-            BottomNavigationBarItem(icon: const ImageIcon(AssetImage("assets/images/quran.png")),label: "quran",backgroundColor:Colors.black),
-            BottomNavigationBarItem(icon: const ImageIcon(AssetImage("assets/images/sebha.png")),label: "sebha",backgroundColor:Colors.black),
-            BottomNavigationBarItem(icon: const ImageIcon(AssetImage("assets/images/radio.png")),label: "radio",backgroundColor:Colors.black),
-            BottomNavigationBarItem(icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "ahadeth",backgroundColor:Colors.black),
+          items: const [
+            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/quran.png")),label: "quran",backgroundColor:Colors.black),
+            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/sebha.png")),label: "sebha",backgroundColor:Colors.black),
+            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/radio.png")),label: "radio",backgroundColor:Colors.black),
+            BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),label: "ahadeth",backgroundColor:Colors.black),
             BottomNavigationBarItem(icon:Icon(Icons.settings),label: "settings ",backgroundColor:Colors.black),
         ],),
         body:tabs[index] ,

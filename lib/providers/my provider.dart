@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show ChangeNotifier, ThemeMode;
 
 class MyProvider extends ChangeNotifier{
   String LanguageCode="en";

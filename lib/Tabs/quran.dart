@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islamiapp/my_theme.dart';
 import 'package:islamiapp/page%20one%20quran/sura%20details.dart';
 import 'package:islamiapp/page%20one%20quran/sura%20model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class QuranTab extends StatelessWidget {
-  QuranTab({super.key});
 
   List<String> suraNames = [
     "الفاتحه",
@@ -123,26 +122,28 @@ class QuranTab extends StatelessWidget {
     "الناس"
   ];
 
+  QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: Column(
         children: [
           Image.asset("assets/images/quran_imaged.png"),
-          Divider(
+          const Divider(
             color: Colors.black,
             thickness: 2,
           ),
           Text(AppLocalizations.of(context)!.suraNames,
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-          Divider(
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+          const Divider(
             color: Colors.black,
             thickness: 2,
           ),
           Expanded(
             child: ListView.separated(
-                    separatorBuilder:(context, index) => Divider(
+                    separatorBuilder:(context, index) => const Divider(
                       thickness: 2,
                       color: Color(0xffB7935F),
                       endIndent: 40,
@@ -158,7 +159,7 @@ class QuranTab extends StatelessWidget {
                   child: Center(
                       child: Text(
                     suraNames[index],
-                    style:TextStyle(fontSize: 25,),
+                    style:const TextStyle(fontSize: 25,),
                   )),
                 );
               },

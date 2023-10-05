@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class RadioTab extends StatelessWidget {
+  const RadioTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,17 +17,17 @@ class RadioTab extends StatelessWidget {
                 width: 300,
                 height: 50,
                 decoration: BoxDecoration(
-                    color: Color(0xffB7935F),
+                    color: const Color(0xffB7935F),
                     borderRadius: BorderRadius.circular(15)),
-                child: Center(
+                child: const Center(
                     child: Text(
                   "إذاعة القرآن الكريم",
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ))),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 60),
-            child: Container(
+          const Padding(
+            padding: EdgeInsets.only(top: 60),
+            child: SizedBox(
               width: 250,
               child: Row(
                 children: [

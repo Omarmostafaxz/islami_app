@@ -4,11 +4,13 @@ import 'package:provider/provider.dart';
 import '../providers/my provider.dart';
 
 class LanguageBottomSheet extends StatelessWidget {
+  const LanguageBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     var provider=Provider.of<MyProvider>(context);
     return  Padding(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Column(
         children: [
           InkWell(
@@ -17,13 +19,13 @@ class LanguageBottomSheet extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text("English",style: TextStyle(color: Colors.black38),),
-                Spacer(),
-                provider.LanguageCode=="en"? Icon(Icons.done,color: Colors.black38,):SizedBox.shrink(),
+                const Text("English",style: TextStyle(color: Colors.black38),),
+                const Spacer(),
+                provider.LanguageCode=="en"? const Icon(Icons.done,color: Colors.black38,):const SizedBox.shrink(),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           InkWell(
@@ -32,9 +34,9 @@ class LanguageBottomSheet extends StatelessWidget {
             },
             child: Row(
               children: [
-                Text("Arabic",),
-                Spacer(),
-                provider.LanguageCode=="en"?SizedBox.shrink():Icon(Icons.done,),
+                const Text("Arabic",),
+                const Spacer(),
+                provider.LanguageCode=="en"?const SizedBox.shrink():const Icon(Icons.done,),
               ],
             ),
           )
